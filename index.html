@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Project cost calculation</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,700&display=swap&subset=cyrillic-ext" rel="stylesheet" />
+	</head>
+
+	<body>
+		<main class="calc-wrapper">
+			<div class="container">
+				<form id="form">
+					<div class="heading">
+						<h1 class="heading-title">Apartment Renovation Calculator</h1>
+						<p class="heading-desc">Base price: 1 m² = 60$</p>
+					</div>
+
+					<!-- Area -->
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
+							<span class="title__inline">Apartment area:</span>
+							<input type="number" min="0" max="200" value="50" id="square-input" class="title__inline input-short" />
+							<span class="title__inline">m²</span>
+						</label>
+						<input type="range" id="square-range" class="range-input" min="0" max="200" value="50" step="1" />
+					</div>
+					<!-- // Area -->
+
+					<!-- For mobile -->
+					<div class="calc-section">
+						<h4 class="checkbox-wrapper title-bold section-title">Renovation type</h4>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio" name="type" value="1" />
+							<div class="title-lite">Budget</div>
+						</label>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio" name="type" value="1.3" checked />
+							<div class="title-lite">
+								Mid-Range
+								<span class="note">+30% to the cost</span>
+							</div>
+						</label>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio" name="type" value="1.5" />
+							<div class="title-lite">
+								Luxury
+								<span class="note">+50% to the cost</span>
+							</div>
+						</label>
+					</div>
+					<!-- // For mobile -->
+
+					<!-- For mobile -->
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title"> House type </label>
+						<label class="radio-wrapper">
+							<input type="radio" class="radio" name="building" value="1" checked />
+							<div class="title-lite">New building</div>
+						</label>
+						<label class="radio-wrapper">
+							<input type="radio" class="radio" name="building" value="1.1" />
+							<div class="title-lite">
+								Secondary
+								<span class="note">+10% to the cost</span>
+							</div>
+						</label>
+					</div>
+					<!-- // For mobile -->
+
+					<!-- Number of rooms -->
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title"> Number of rooms </label>
+						<div class="rooms-wrapper">
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="0.8" />
+								<span class="rooms-radio-fake">C</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1" checked/>
+								<span class="rooms-radio-fake">1</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1" />
+								<span class="rooms-radio-fake">2</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1.05" />
+								<span class="rooms-radio-fake">3</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1.05" />
+								<span class="rooms-radio-fake">4</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1.05" />
+								<span class="rooms-radio-fake">5</span>
+							</label>
+						</div>
+					</div>
+					<!-- // Number of rooms -->
+
+					<!-- Additional options -->
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title"> Additional options </label>
+						<label class="radio-wrapper">
+							<input type="checkbox" class="radio" name="ceiling" value="900" />
+							<div class="title-lite">
+								Stretch ceiling
+								<span class="note">90 $. for m²</span>
+							</div>
+						</label>
+						<label class="radio-wrapper">
+							<input type="checkbox" class="radio" name="walls" value="1.1" />
+							<div class="title-lite">
+								Wall painting
+								<span class="note">+10% to cost</span>
+							</div>
+						</label>
+						<label class="radio-wrapper">
+							<input type="checkbox" class="radio" name="floor" value="1.1" />
+							<div class="title-lite">
+								Warm floor
+								<span class="note">+10% to cost</span>
+							</div>
+						</label>
+					</div>
+					<!-- // Additional options -->
+
+					<!-- Repair cost -->
+					<div class="calc-price">
+						<div class="calc-price-title">Repair cost:</div>
+						<div class="calc-price-value">
+							<span id="total-price">0</span>
+							$
+						</div>
+					</div>
+					<!-- // Repair cost -->
+				</form>
+			</div>
+		</main>
+
+		<footer class="footer footer-inner">
+			<div class="container">
+				<p class="footer-text"> Project build while studing in Indra Institute <a href="https://webcademy.ru" target="_blank">G.Chinguun</a></p>
+			</div>
+		</footer>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
